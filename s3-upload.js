@@ -10,15 +10,16 @@ app.use(express.static('public'))
 
 //const s3 = new aws.S3({ apiVersion: '2006-03-01' });
 const s3 = new aws.S3();
-const config = require('config');
+//const config = require('config');
 // Needs AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
 //AWS.config.loadFromPath('./config.json');
-
+/*
 aws.config.update({
     accessKeyId: config.get('AWS.accessKeyId'),
     secretAccessKey: config.get('AWS.secretAccessKey'),
     region: config.get('AWS.region')
 })
+*/
 
 //console.log("waht is the AWS credentials now? "+credentials);
 
@@ -35,6 +36,7 @@ const upload = multer({
             //const ext = path.extname(file.originalname) // get the file extension
             //cb(null, `uploaded/orig/${uuid()}${ext}`);
             cb(null, 'uploaded/orig/' + Date.now().toString() + '__' + (file.originalname))
+            //Date().toISOString().replace(/:/g, '-') + '-' + file.originalname
         }
     })
 })
