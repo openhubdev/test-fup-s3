@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "devlocal": "nodemon server-upload.js",
-    "dev": "nodemon s3-upload.js",
-    "start": "node server-upload.js"
+    "start": "node s3-upload.js",
+    "dev": "nodemon server-upload.js",
+    "devlocal": "nodemon server-upload.js"
   },
   "keywords": [],
   "author": "",
